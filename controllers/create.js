@@ -1,16 +1,7 @@
-import Book from "../models/book.js";
+import Book from '../models/book.js';
 
 const postBook = async (req, res) => {
-  const {
-    title,
-    pageCount,
-    publishedDate,
-    thumbnailUrl,
-    shortDescription,
-    longDescription,
-    status,
-    authors,
-  } = req.body;
+  const { title, pageCount, publishedDate, thumbnailUrl, shortDescription, longDescription, status, authors } = req.body;
 
   try {
     const newBook = new Book({

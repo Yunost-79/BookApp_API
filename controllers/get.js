@@ -1,5 +1,5 @@
-import Book from "../models/book.js";
-import mongoose from "mongoose";
+import Book from '../models/book.js';
+import mongoose from 'mongoose';
 
 const getBooks = async ({ params: { id: bookId } }, res) => {
   try {
@@ -11,9 +11,7 @@ const getBooks = async ({ params: { id: bookId } }, res) => {
       // If an ID is provided, get the book with this ID
       const book = await Book.findById(bookId);
       if (!book) {
-        return res
-          .status(404)
-          .json({ message: `Book with ID:${bookId} was not found ` });
+        return res.status(404).json({ message: `Book with ID:${bookId} was not found ` });
       }
 
       return res.json(book);

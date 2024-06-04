@@ -1,5 +1,5 @@
-import Book from "../models/book.js";
-import mongoose from "mongoose";
+import Book from '../models/book.js';
+import mongoose from 'mongoose';
 
 const deleteBook = async ({ params: { id: bookId } }, res) => {
   if (!mongoose.Types.ObjectId.isValid(bookId)) {
@@ -9,9 +9,7 @@ const deleteBook = async ({ params: { id: bookId } }, res) => {
   try {
     const book = await Book.findById(bookId);
     if (!book) {
-      return res
-        .status(404)
-        .json({ message: `Book with ID:${bookId} was not found ` });
+      return res.status(404).json({ message: `Book with ID:${bookId} was not found ` });
     }
 
     await Book.findByIdAndDelete(bookId);
