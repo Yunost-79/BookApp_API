@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import Book from '../models/book.ts';
-import { BAD_REQUEST_CODE, INTERNAL_SERVER_ERROR_CODE, NOT_FOUNDS_CODE, OK_CODE } from '../variables/statusCodes';
+import { BAD_REQUEST_CODE, INTERNAL_SERVER_ERROR_CODE, NOT_FOUNDS_CODE, OK_CODE } from '../variables/statusCodes.ts';
 
 const updateBook = async (
   req: {
